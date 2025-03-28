@@ -1,4 +1,4 @@
-package programmers;
+package level2;
 
 import java.util.Scanner;
 
