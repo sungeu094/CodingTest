@@ -39,6 +39,7 @@ public class level2_42839_exhaustiveSearch {
 
         int count = 0;
         for (int i = 0; i < primeList.size(); i++) {
+
             char[] eachDigit = String.valueOf(primeList.get(i)).toCharArray();
             List<Character> digit = new ArrayList<>();
             for (int j = 0; j < eachDigit.length; j++) {
@@ -64,6 +65,12 @@ public class level2_42839_exhaustiveSearch {
                 System.out.println(primeList.get(i));
                 count++;
             }
+
+            char[] ch = String.valueOf(primeList.get(i)).toCharArray();
+            // List<char[]> digit = new ArrayList<>(ch);
+            // System.out.println(digit);
+
+            primeList.get(i);
 
         }
 
