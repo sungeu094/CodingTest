@@ -2,30 +2,44 @@ package level3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class level3_64064_exhaustiveSearch {
-    private static void dfs(int depth, Set<String[]> path, List<String[]> listBannedID, List<String> nowPossibleID, boolean[] checkDFS){
-        if(nowPossibleID.size() == listBannedID.size()){
+    static boolean[] check;
+    static List<String[]> listBannedID;
+
+    private static boolean contains(String[] arr, String value) {
+        for (String str : arr) {
+            if (str.equals(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void dfs(int depth, String[] matchNoRepeat) {
+        if (depth == matchNoRepeat.length) {
+            for (String i : matchNoRepeat) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
             return;
         }
-        // 어떻게 dfs + 백트래킹을 해야할까?
 
-        // 사이즈 확인
-        for(int i = 0; i < listBannedID.size(); i++){
-            if(checkDFS[i] == false){
-                checkDFS[i] = true;
-                
+        for (int i = 0; i < listBannedID.get(depth).length; i++) {
+            if (!contains(matchNoRepeat, listBannedID.get(depth)[i]) && check[depth] == false) {
+                check[depth] = true;
+                matchNoRepeat[depth] = listBannedID.get(depth)[i];
+                dfs(depth + 1, matchNoRepeat);
+                check[depth] = false;
             }
         }
     }
 
     public static void main(String[] args) {
-        String[] applicantID = {"frodo", "fradi", "crodo", "abc123", "frodoc"};
-        String[] illegalID = {"fr*d*", "*rodo", "*****", "******"};
-        List<String[]> listBannedID = new ArrayList<>();
+        String[] applicantID = { "frodo", "fradi", "crodo", "abc123", "frodoc" };
+        String[] illegalID = { "fr*d*", "*rodo", "******", "******" };
+        listBannedID = new ArrayList<>();
         for (int i = 0; i < illegalID.length; i++) {
             int illegalID_length = illegalID[i].length();
             char[] spellNotLegalID = illegalID[i].toCharArray();
@@ -56,10 +70,13 @@ public class level3_64064_exhaustiveSearch {
             System.out.println("illegalID[" + i + "]에 매칭되는 후보자: " + Arrays.toString(listBannedID.get(i)));
         }
 
-        Set<String[]> bannedApplicant = new HashSet<>();
-        boolean[] checkDFS = new boolean[listBannedID.size()];
-        Arrays.fill(checkDFS, false);
+        check = new boolean[listBannedID.size()];
+        Arrays.fill(check, false);
 
-        dfs(0, bannedApplicant, listBannedID, new ArrayList<>(), checkDFS);
+        String[] matchNoRepeat = new String[listBannedID.size()];
+        Arrays.fill(matchNoRepeat, "");
+
+        dfs(0, matchNoRepeat);
+
     }
 }
