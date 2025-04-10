@@ -35,7 +35,7 @@ public class level3_64064_exhaustiveSearch {
             }
         }
     }
-
+    // abc123, frodoc은 
     public static void main(String[] args) {
         String[] applicantID = { "frodo", "fradi", "crodo", "abc123", "frodoc" };
         String[] illegalID = { "fr*d*", "*rodo", "******", "******" };
