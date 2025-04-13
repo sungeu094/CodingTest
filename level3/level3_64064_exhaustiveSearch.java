@@ -2,44 +2,45 @@ package level3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class level3_64064_exhaustiveSearch {
-    static boolean[] check;
-    static List<String[]> listBannedID;
 
-    private static boolean contains(String[] arr, String value) {
-        for (String str : arr) {
-            if (str.equals(value)) {
-                return true;
-            }
+    private static class Node{
+        String name;
+        int depth;
+        List<Node> children = new ArrayList<>();
+        
+        public Node(String name, int depth){
+            this.name = name;
+            this.depth = depth;
         }
-        return false;
+
+        void addChild(Node child){
+            children.add(child);
+        }
     }
 
-    private static void dfs(int depth, String[] matchNoRepeat) {
-        if (depth == matchNoRepeat.length) {
-            for (String i : matchNoRepeat) {
-                System.out.print(i + " ");
-            }
-            System.out.println();
+    private static void dfs(Node node, List<String> mixtureList) {
+        if (mixtureList.size() == 4) {
+            System.out.println(mixtureList);
             return;
         }
 
-        for (int i = 0; i < listBannedID.get(depth).length; i++) {
-            if (!contains(matchNoRepeat, listBannedID.get(depth)[i]) && check[depth] == false) {
-                check[depth] = true;
-                matchNoRepeat[depth] = listBannedID.get(depth)[i];
-                dfs(depth + 1, matchNoRepeat);
-                check[depth] = false;
-            }
+        
+        for(Node child : node.children){
+            mixtureList.add(child.name);
+            dfs(child, mixtureList);
         }
     }
-    // abc123, frodoc은 
+
+    
     public static void main(String[] args) {
         String[] applicantID = { "frodo", "fradi", "crodo", "abc123", "frodoc" };
         String[] illegalID = { "fr*d*", "*rodo", "******", "******" };
-        listBannedID = new ArrayList<>();
+        List<String[]> listBannedID = new ArrayList<>();
         for (int i = 0; i < illegalID.length; i++) {
             int illegalID_length = illegalID[i].length();
             char[] spellNotLegalID = illegalID[i].toCharArray();
@@ -70,13 +71,28 @@ public class level3_64064_exhaustiveSearch {
             System.out.println("illegalID[" + i + "]에 매칭되는 후보자: " + Arrays.toString(listBannedID.get(i)));
         }
 
-        check = new boolean[listBannedID.size()];
-        Arrays.fill(check, false);
+        Map<String, Node> makeNode = new HashMap<>();
+        for(int depth = 0; depth < listBannedID.size(); depth++){
+            for(String value : listBannedID.get(depth)){
+                makeNode.put(value + depth, new Node(value, depth));
+            }
+        }
 
-        String[] matchNoRepeat = new String[listBannedID.size()];
-        Arrays.fill(matchNoRepeat, "");
+        for(int depth = 0; depth < listBannedID.size()-1; depth++){
+            for(String parent : listBannedID.get(depth)){
+                for(String child : listBannedID.get(depth+1)){
+                    makeNode.get(parent + depth).addChild(makeNode.get(child + (depth+1)));
+                }
+            }
+        }
 
-        dfs(0, matchNoRepeat);
+        List<String> mixtureList = new ArrayList<>();
+
+        for(int i = 0; i < listBannedID.get(0).length; i++){
+            dfs(makeNode.get(listBannedID.get(0)[i]), mixtureList);
+        }
+
+        //dfs로 줄 것.
 
     }
 }
