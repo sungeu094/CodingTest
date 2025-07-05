@@ -1,24 +1,55 @@
 package level1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class level1_42748_sorting {
     public static void main(String[] args) {
         int[] arr = new int[]{1,5,2,6,3,7,4};
-        int[][] commands = new int[][]{{2,5,3},{4,4,1},{1,7,3}};
+        int[][] commands = new int[][]{{2,5,3},{3,6,3}};
+        int[] result = new int[commands.length];
+
+        for (int i = 0; i < commands.length; i++) {
+            result[i] = quickSelect(arr, commands[i][2]-1, commands[i][0]-1, commands[i][1]-1);
+        }
         
-        List<Integer> list = new ArrayList<>();
+        for(int i = 0; i < result.length; i++){
+            System.out.println(result[i]);
+        }
+    }
 
-        for (int[] command : commands) {
-            int[] slice = Arrays.copyOfRange(arr, command[0] - 1, command[1]);
-            Arrays.sort(slice);
-            list.add(slice[command[2]-1]);
+    public static int quickSelect(int[] arr, int k, int left, int right){
+        if(left == right) return arr[left];
 
+        int pivotIndex = partition(arr, left, right);
+        int length = pivotIndex - left;
+
+        if(length == k){
+            return arr[pivotIndex];
+        }else if(length > k){
+            return quickSelect(arr, k, left, pivotIndex - 1);
+        } else{
+            return quickSelect(arr, k - length, pivotIndex+1, right);
+        }
+    }
+
+    private static int partition(int[] arr, int left, int right){
+        int pivot = arr[right];
+        int i = left;
+
+        for(int j = left; j < right; j++){
+            if(arr[j] < pivot){
+                swap(arr,i,j);
+                i++;
+            }
         }
 
-        int[] result = list.stream().mapToInt(Integer::intValue).toArray();
+        swap(arr, i, right);
+        System.out.println("i : " + i);
+        return i;
+    }
+
+    private static void swap(int[] arr, int i, int j){
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 }
 
