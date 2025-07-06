@@ -29,4 +29,8 @@ public class level1_12930 {
         System.out.println(appendString.toString());
 
     }
+
+    public void reflection(){
+        System.out.println("reflection 예제");
+    }
 }
