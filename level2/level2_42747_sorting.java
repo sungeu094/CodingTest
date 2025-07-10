@@ -1,6 +1,8 @@
 package level2;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public class level2_42747_sorting {
 
@@ -26,7 +28,8 @@ public class level2_42747_sorting {
 
         // System.out.println(maxIndex);
     
-    
+        List<String> list;
+        
         int answer = 0;
         Arrays.sort(citations);
         for (int i = 0; i < citations.length; i++) {
@@ -35,5 +38,10 @@ public class level2_42747_sorting {
             answer = Math.max(answer, smaller);
             System.out.println("answer : " + answer);
         }
+
+        Comparator<String> comparator;
     }
 }
+
+
+// 12917, 12915, 42746, 72411
