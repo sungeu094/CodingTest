@@ -2,12 +2,17 @@ package level2;
 
 public class level2_42746 {
 
-    public static int getFirstNum(int n) {
-        while (n >= 10) {
-            n = n / 10;
+    public static boolean compareElements(int a, int b) {
+        String strA = Integer.toString(a);
+        String strB = Integer.toString(b);
+
+        if (strA.charAt(0) > strB.charAt(0)) {
+            return true;
+        } else if (strA.charAt(0) == strB.charAt(0)) {
+
         }
 
-        return n;
+        return false;
     }
 
     public static void main(String[] args) {
@@ -15,12 +20,10 @@ public class level2_42746 {
         // 1. 배열의 요소 하나하나의 첫자리 비교.
         // 2. 만약 동일한 값이라면 뒷자리들도 비교.
         // stringbuilder를 통해서 값 리턴
-
-        StringBuilder sb = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         int[] numbers = { 6, 10, 2 };
-        int[] max = new int[numbers.length];
 
-        System.out.println(level2_42746.getFirstNum(100));
+        // 조합반환
 
     }
 
