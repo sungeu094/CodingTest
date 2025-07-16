@@ -1,0 +1,266 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "HelloJNI",
+            "request": "launch",
+            "mainClass": "HelloJNI",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "DFS",
+            "request": "launch",
+            "mainClass": "SectionOrganize.DFS",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "ExhaustiveSearch_DFS",
+            "request": "launch",
+            "mainClass": "SectionOrganize.ExhaustiveSearch_DFS",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "Sorting",
+            "request": "launch",
+            "mainClass": "SectionOrganize.Sorting",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "section5_RecursionEx",
+            "request": "launch",
+            "mainClass": "SectionOrganize.section5_RecursionEx",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "Static_ex",
+            "request": "launch",
+            "mainClass": "Static_ex",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "MyFuncMain",
+            "request": "launch",
+            "mainClass": "function.MyFuncMain",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_12915_sorting",
+            "request": "launch",
+            "mainClass": "level1.level1_12915_sorting",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_12916_formation",
+            "request": "launch",
+            "mainClass": "level1.level1_12916_formation",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_12917_sorting",
+            "request": "launch",
+            "mainClass": "level1.level1_12917_sorting",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_12918_regularExpression",
+            "request": "launch",
+            "mainClass": "level1.level1_12918_regularExpression",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_12930",
+            "request": "launch",
+            "mainClass": "level1.level1_12930",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_12932",
+            "request": "launch",
+            "mainClass": "level1.level1_12932",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_42748_UsingQuickSort",
+            "request": "launch",
+            "mainClass": "level1.level1_42748_UsingQuickSort",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_42748_sorting",
+            "request": "launch",
+            "mainClass": "level1.level1_42748_sorting",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_42840_exhaustiveSearch",
+            "request": "launch",
+            "mainClass": "level1.level1_42840_exhaustiveSearch",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_68644_sorting",
+            "request": "launch",
+            "mainClass": "level1.level1_68644_sorting",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_68935_formation",
+            "request": "launch",
+            "mainClass": "level1.level1_68935_formation",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_72410_regularExpression",
+            "request": "launch",
+            "mainClass": "level1.level1_72410_regularExpression",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level1_81301_formation",
+            "request": "launch",
+            "mainClass": "level1.level1_81301_formation",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_42746",
+            "request": "launch",
+            "mainClass": "level2.level2_42746",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_42747_sorting",
+            "request": "launch",
+            "mainClass": "level2.level2_42747_sorting",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_42839_exhaustiveSearch",
+            "request": "launch",
+            "mainClass": "level2.level2_42839_exhaustiveSearch",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_42839_exhaustiveSearchEx",
+            "request": "launch",
+            "mainClass": "level2.level2_42839_exhaustiveSearchEx",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_42842_exhaustiveSearch",
+            "request": "launch",
+            "mainClass": "level2.level2_42842_exhaustiveSearch",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_60057",
+            "request": "launch",
+            "mainClass": "level2.level2_60057",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_60057_example",
+            "request": "launch",
+            "mainClass": "level2.level2_60057_example",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_67257_exhaustiveSearch",
+            "request": "launch",
+            "mainClass": "level2.level2_67257_exhaustiveSearch",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_68645",
+            "request": "launch",
+            "mainClass": "level2.level2_68645",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_68936_recursion",
+            "request": "launch",
+            "mainClass": "level2.level2_68936_recursion",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_70129_formation",
+            "request": "launch",
+            "mainClass": "level2.level2_70129_formation",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_81302",
+            "request": "launch",
+            "mainClass": "level2.level2_81302",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_84512_recursion",
+            "request": "launch",
+            "mainClass": "level2.level2_84512_recursion",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level2_87377",
+            "request": "launch",
+            "mainClass": "level2.level2_87377",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level3_12946_recursionHanoi",
+            "request": "launch",
+            "mainClass": "level3.level3_12946_recursionHanoi",
+            "projectName": "programmers_9ee248c8"
+        },
+        {
+            "type": "java",
+            "name": "level3_64064_exhaustiveSearch",
+            "request": "launch",
+            "mainClass": "level3.level3_64064_exhaustiveSearch",
+            "projectName": "programmers_9ee248c8"
+        }
+    ]
+}
